@@ -67,7 +67,7 @@
         <dependency>
             <groupId>com.github.jcustenborder.netty</groupId>
             <artifactId>netty-codec-wits</artifactId>
-            <version>0.1-SNAPSHOT</version>
+            <version>${wits.version}</version>
         </dependency>
         <dependency>
             <groupId>io.netty</groupId>
