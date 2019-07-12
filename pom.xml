@@ -61,6 +61,7 @@
     </issueManagement>
     <properties>
         <netty.version>4.1.36.Final</netty.version>
+        <wits.version>[0.1.2,)</wits.version>
     </properties>
     <dependencies>
         <dependency>
@@ -79,7 +80,7 @@
             <plugin>
                 <groupId>com.github.jcustenborder.maven.plugins</groupId>
                 <artifactId>wits-maven-plugin</artifactId>
-                <version>0.1-SNAPSHOT</version>
+                <version>0.1.2</version>
                 <executions>
                     <execution>
                         <phase>generate-sources</phase>
