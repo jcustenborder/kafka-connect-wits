@@ -13,12 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-@Introduction("This is information about the connector.")
-@Title("Title")
+@Introduction("WITS is an oil and gas protocol used for transferring data from drilling operations. " +
+    "This plugin is used to connect to a WITS server and retrieve data in real time allowing the " +
+    "data to be consumed by Kafka based applications. This plugin is specifically for the ascii " +
+    "WITS protocol and is not for the later WITSML protocol.")
+@Title("WITS Plugin")
 @DocumentationWarning("This is a warning")
 @PluginOwner("jcustenborder")
-@PluginName("kafka-connect-example")
-package com.github.jcustenborder.kafka.connect.example;
+@PluginName("kafka-connect-wits")
+package com.github.jcustenborder.kafka.connect.wits;
 
 import com.github.jcustenborder.kafka.connect.utils.config.DocumentationWarning;
 import com.github.jcustenborder.kafka.connect.utils.config.Introduction;

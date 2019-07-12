@@ -1,6 +1,5 @@
 # Introduction
 
-This is a template repository for creating Kafka Connect Plugins. 
-
+This plugin is used to connect to a WITS server and retrieve data in real time.
 
 

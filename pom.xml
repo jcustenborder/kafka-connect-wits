@@ -26,11 +26,11 @@
         <artifactId>kafka-connect-parent</artifactId>
         <version>2.1.1-cp1</version>
     </parent>
-    <artifactId>kafka-connect-example</artifactId>
+    <artifactId>kafka-connect-wits</artifactId>
     <version>0.0.2-SNAPSHOT</version>
-    <name>kafka-connect-example</name>
-    <description>A Kafka Connect connector receiving data from example.</description>
-    <url>https://github.com/jcustenborder/kafka-connect-example</url>
+    <name>kafka-connect-wits</name>
+    <description>A Kafka Connect connector receiving data from wits.</description>
+    <url>https://github.com/jcustenborder/kafka-connect-wits</url>
     <inceptionYear>2019</inceptionYear>
     <licenses>
         <license>
@@ -50,18 +50,50 @@
         </developer>
     </developers>
     <scm>
-        <connection>scm:git:https://github.com/jcustenborder/kafka-connect-example.git</connection>
-        <developerConnection>scm:git:git@github.com:jcustenborder/kafka-connect-example.git
+        <connection>scm:git:https://github.com/jcustenborder/kafka-connect-wits.git</connection>
+        <developerConnection>scm:git:git@github.com:jcustenborder/kafka-connect-wits.git
         </developerConnection>
-        <url>https://github.com/jcustenborder/kafka-connect-example</url>
+        <url>https://github.com/jcustenborder/kafka-connect-wits</url>
     </scm>
     <issueManagement>
         <system>github</system>
-        <url>https://github.com/jcustenborder/kafka-connect-example/issues</url>
+        <url>https://github.com/jcustenborder/kafka-connect-wits/issues</url>
     </issueManagement>
-    <dependencies/>
+    <properties>
+        <netty.version>4.1.36.Final</netty.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.github.jcustenborder.netty</groupId>
+            <artifactId>netty-codec-wits</artifactId>
+            <version>0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>${netty.version}</version>
+        </dependency>
+    </dependencies>
     <build>
         <plugins>
+            <plugin>
+                <groupId>com.github.jcustenborder.maven.plugins</groupId>
+                <artifactId>wits-maven-plugin</artifactId>
+                <version>0.1-SNAPSHOT</version>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>generate-struct-mappers</goal>
+                        </goals>
+                        <configuration>
+                            <includeFiles>
+                                <includeFile>src/main/wits-records/*.json</includeFile>
+                            </includeFiles>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>com.github.jcustenborder.maven.plugins</groupId>
                 <artifactId>kafka-connect-maven-plugin</artifactId>

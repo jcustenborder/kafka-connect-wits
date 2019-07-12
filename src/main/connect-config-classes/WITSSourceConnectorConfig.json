@@ -1,0 +1,21 @@
+{
+  "name": "com.github.jcustenborder.kafka.connect.wits.WITSSourceConnectorConfig",
+  "prefix": "wits.",
+  "groups": [
+    {
+      "name": "CONNECTION",
+      "display": "Connection Configuration",
+      "prefix": "connection.",
+      "configItems": [
+        {
+          "configKey": "servers",
+          "type": "LIST",
+          "documentation": "Server(s) to connect to.",
+          "importance": "HIGH",
+          "width": "MEDIUM",
+          "extendedType": "HostAndPort"
+        }
+      ]
+    }
+  ]
+}
